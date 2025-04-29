@@ -61,6 +61,57 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #393a3c;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  nav {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .features-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* Hero Section */
 .hero {
   position: relative; /* Define um contexto para os elementos posicionados dentro da seção */
@@ -113,6 +164,51 @@ nav ul li a:hover::after {
   background-color: #0056b3;
 }
 
+@media (max-width: 768px) {
+  /* Hero section responsivo */
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .hero-content {
+    top: 55%;
+    transform: translate(-50%, -55%);
+  }
+
+  /* Testemunhos em coluna */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 20px 15px;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.85rem;
+  }
+
+  /* Ajuste no botão "Saiba mais" se estiver fora do hero */
+  .hero-button {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
 .features {
   padding: 60px 40px;
   background: #ffffff;
@@ -127,10 +223,19 @@ nav ul li a:hover::after {
 }
 
 .features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Card mais estreito */
+  display: flex;
   gap: 20px;
-  align-items: start;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.features-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.features-grid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
 }
 
 .feature-card {
@@ -228,6 +333,32 @@ nav ul li a:hover::after {
   font-size: 0.9rem;
   font-weight: bold;
   color: #1e3a8a;
+}
+
+@media (max-width: 768px) {
+  /* Títulos menores */
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  /* Grid de depoimentos em coluna */
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* um por linha */
+    gap: 20px;
+  }
+
+  /* Cartões de depoimentos mais compactos */
+  .testimonial-card {
+    padding: 20px 15px;
+  }
+
+  .testimonial-text {
+    font-size: 0.9rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.8rem;
+  }
 }
 
 /* Contact Section */
